@@ -42,3 +42,5 @@ export PATH="${BUILD_DIR}/.heroku/dotnet:${PATH}"
 export NUGET_PACKAGES="${CACHE_DIR}/nuget/cache"
 
 cd $BUILD_DIR
+
+dotnet build $TEST_PROJECT_FILE --configuration Debug

@@ -23,4 +23,5 @@ export PATH="${DOTNET_SDK_LOCATION}:${PATH}"
 
 cd $BUILD_DIR
 
+dotnet build $TEST_PROJECT_FILE --configuration Debug
 dotnet test -v q --no-build

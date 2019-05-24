@@ -13,6 +13,12 @@ function indent() {
   esac
 }
 
+function cleanup_dotnet() {
+  local BUILD_DIR="$1"
+  rm -rf /app/dotnet
+  rm -rf ${BUILD_DIR}/.heroku/dotnet
+}
+
 function install_dotnet() {
   local BUILD_DIR="$1"
   local CACHE_DIR="$2"

@@ -62,6 +62,7 @@ echo "Cleanup dotnet SDK"
 cleanup_dotnet $BUILD_DIR
 
 cat <<SH > ${BUILD_DIR}/web-start.sh
+echo "Starting ${PROJECT_NAME} ..."
 cd $HOME/heroku_output && ./${PROJECT_NAME}
 SH
 
@@ -71,6 +72,6 @@ if [ -f ${BUILD_DIR}/Procfile ] && grep -q '^web:' ${BUILD_DIR}/Procfile ; then
 else
 	echo "Add web process to Procfile" | indent
 	cat << EOT >> ${BUILD_DIR}/Procfile
-web: sh -x ./web-start.sh
+web: sh ./web-start.sh
 EOT
 fi
